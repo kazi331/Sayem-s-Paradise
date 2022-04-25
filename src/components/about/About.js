@@ -13,10 +13,10 @@ const About = () => {
                 <h3>Kazi Shariful Islam </h3>
                 <h2>A passionate web developer</h2>
                 <p>
-                  Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt
-                  et. Inventore et et dolor consequatur itaque ut voluptate sed
-                  et. Magnam nam ipsum tenetur suscipit voluptatum nam et est
-                  corrupti.
+                  I'm Kazi Shariful Islam, a passionate programmer who loves to
+                  explore the web for the betterment of the future technology. I
+                  always try to learn and explore new programming languages. I'm
+                  just stuck on programming.
                 </p>
                 <div className="text-center text-lg-start">
                   <a

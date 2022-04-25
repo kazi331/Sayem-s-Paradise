@@ -1,14 +1,37 @@
 import React from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { Link, useLocation } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import useFirebase from "../../hooks/useFirebase";
+import auth from "../firebase.init";
 import "./login.css";
 
 const Login = () => {
-  const { emailLogin, googleLogin, grabEmail, grabPass } = useFirebase();
+  const { userEmail, emailLogin, googleLogin, grabEmail, grabPass } =
+    useFirebase();
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
 
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
+
+  const resetPass = () => {
+    if (!userEmail) {
+      toast("Enter email");
+    } else {
+      sendPasswordResetEmail(userEmail);
+      if (sending) {
+        return toast("Email is being sent...");
+      }
+      if (error) {
+        toast(error?.message);
+      } else {
+        toast("Reset email sent");
+      }
+    }
+  };
 
   return (
     <div className="login-container">
@@ -70,7 +93,14 @@ const Login = () => {
                 </Button>
               </div>
             </Form>
+            <p>
+              Forgot password?{" "}
+              <span onClick={resetPass} className="reset-btn text-primary">
+                Reset Password
+              </span>
+            </p>
           </div>
+          <ToastContainer />
         </div>
       </div>
     </div>

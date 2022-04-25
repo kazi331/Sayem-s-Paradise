@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import useFirebase from "../../hooks/useFirebase";
 import "./register.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const {
@@ -21,7 +23,10 @@ const Register = () => {
           <div className="col-12 col-md-8 col-lg-6 mx-auto p-4 bg-light my-4 rounded">
             <div className="btns">
               <Button
-                onClick={googleLogin}
+                onClick={()=>{
+                  googleLogin();
+                  toast('Waiting for google login...')
+                }}
                 variant="dark"
                 type="submit"
                 className="mb-4"
@@ -80,6 +85,7 @@ const Register = () => {
               </div>
             </Form>
           </div>
+          <ToastContainer/>
         </div>
       </div>
     </div>

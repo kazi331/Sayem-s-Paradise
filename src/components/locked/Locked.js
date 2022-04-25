@@ -6,9 +6,9 @@ import auth from "../firebase.init";
 
 const Locked = ({ children }: { children: JSX.Element }) => {
   const [user, loading] = useAuthState(auth);
-  console.log(user);
+
   const location = useLocation();
-  // protect from coming back to login page after redirect with refresh 
+  // protect from coming back to login page after redirect with refresh
   if (loading) {
     return (
       <div className="d-flex align-items-center justify-content-center p-4 m-4">
