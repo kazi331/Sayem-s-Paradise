@@ -26,8 +26,8 @@ const Home = () => {
               maplifelonglove of learning with a focus on scholarship. For 23
               years of existence.
             </p>
-            <div className="btn mt-4 btn-outline-light">
-              Call Us: +8801612******
+            <div className="cta mt-4">
+              Call Us: <a href="tel:+8801612******">+8801612******</a>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@ const Home = () => {
                   Become The English Speaker Everyone Is Jealous Of
                 </h3>
                 <p className="mt-3">
-                  Join the 1,000’s of students that have gotten HAPPY ENGLISH
+                  Join the 1,000s of students that have gotten HAPPY ENGLISH
                   Get the best English lessons FOR YOU!
                 </p>
                 <a

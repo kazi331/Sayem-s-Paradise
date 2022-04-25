@@ -52,11 +52,11 @@ h3 {
 }
 
 .service-32 .badge-info {
-  background: #188ef4;
+  background: #212529;
 }
 
 .service-32 .btn-info-gradiant {
-  background: #188ef4;
+  background: #212529;
   background: -webkit-linear-gradient(
     legacy-direction(to right),
     #188ef4 0%,
@@ -66,33 +66,12 @@ h3 {
     linear,
     left top,
     right top,
-    from(#188ef4),
-    to(#316ce8)
+    from(#212529),
+    to(#212529)
   );
-  background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
-  background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
-  background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+  background: #212529;
   border: 0px;
   color: #ffffff;
-}
-
-.service-32 .btn-info-gradiant:hover {
-  background: #316ce8;
-  background: -webkit-linear-gradient(
-    legacy-direction(to right),
-    #316ce8 0%,
-    #188ef4 100%
-  );
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#316ce8),
-    to(#188ef4)
-  );
-  background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
-  background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
-  background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
 }
 
 .service-32 .btn-md {
@@ -100,3 +79,7 @@ h3 {
   font-size: 16px;
 }
 
+.cta a {
+  color: white;
+  text-decoration: none;
+}
