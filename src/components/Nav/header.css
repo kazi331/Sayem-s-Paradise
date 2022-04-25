@@ -1,0 +1,56 @@
+nav {
+  background-color: #212529;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+nav .links {
+  display: flex;
+  flex-wrap: wrap;
+}
+nav a {
+  text-decoration: none;
+  color: #b0b0b0;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+nav a:hover {
+  color: white !important;
+}
+.signOut-btn {
+  border: none;
+  background-color: #212529;
+  color: rgb(176, 176, 176);
+}
+.signOut-btn:hover {
+  color: white;
+}
+.user-photo {
+  border-radius: 100px;
+  max-height: 30px;
+  margin: auto 10px;
+}
+.logout, .login{
+  color: #b0b0b0;
+  border: 1px solid gray;
+  padding: 5px 14px;
+  padding-top: 3px;
+  border-radius: 5px;
+  background-color: gray;
+  color: white !important;
+}
+.logout:hover{
+  cursor: pointer;
+  color: white;
+}
+.profile img{
+  max-width: 30px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.display-user{
+  color: #fff !important;
+  margin-right: 10px;
+}
