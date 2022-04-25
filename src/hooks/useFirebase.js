@@ -9,10 +9,9 @@ import {
 import { useEffect, useState } from "react";
 import { useSendEmailVerification } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import auth from "../components/firebase.init";
-import {  toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const useFirebase = () => {
   const [userEmail, setEmail] = useState("");
@@ -37,7 +36,7 @@ const useFirebase = () => {
   const googleLogin = (from) => {
     return signInWithPopup(auth, googleProvider)
       .then((result) => {
-        toast('Wait...')
+        toast("Wait...");
         const user = result.user;
         setUser(user);
         console.log(user.email);
@@ -48,13 +47,14 @@ const useFirebase = () => {
   // register with email and password
   const handleEmailRegister = (e) => {
     e.preventDefault();
-    if(!userEmail) return toast('Please Enter an email');
-    if(pass !== confirmPass) return toast('Password does\'t match.')
+    if (!userEmail) return toast("Please Enter an email");
+    if (!pass) return toast("Please Enter password.");
+    if (pass !== confirmPass) return toast("Password does't match.");
     createUserWithEmailAndPassword(auth, userEmail, pass)
       .then((result) => {
         const user = result.user;
         setUser(user);
-        toast('Verification email sent. ');
+        toast("Verification email sent. ");
       })
       .catch((error) => toast(error.message));
   };
@@ -64,20 +64,21 @@ const useFirebase = () => {
   const from = location?.state?.from?.pathname || "/";
   const emailLogin = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(auth, userEmail, pass)
-    if(!userEmail) return toast('Enter valid email and pass')
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        console.log(user, userEmail, pass);
-        navigate(from, { replace: true });
-        sendEmailVerification(userEmail);
-        toast(user.email, 'Successfully logged in. ')
-      })
-      .catch((error) => {
-        setError(error);
-        toast(error.message);
-      });
+    signInWithEmailAndPassword(auth, userEmail, pass);
+    if (!userEmail)
+      return toast("Enter valid email and pass")
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+          console.log(user, userEmail, pass);
+          navigate(from, { replace: true });
+          sendEmailVerification(userEmail);
+          toast(user.email, "Successfully logged in. ");
+        })
+        .catch((error) => {
+          setError(error);
+          toast(error.message);
+        });
   };
 
   //   observe current logged in user
