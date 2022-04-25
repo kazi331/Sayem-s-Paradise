@@ -7,7 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../components/firebase.init";
 
 const useFirebase = () => {
@@ -15,6 +15,7 @@ const useFirebase = () => {
   const [pass, setPass] = useState("");
   const [user, setUser] = useState([]);
   const [confirmPass, setConfirmPass] = useState("");
+  const [error, setError] = useState("");
 
   const grabEmail = (e) => {
     setEmail(e.target.value);
@@ -52,15 +53,21 @@ const useFirebase = () => {
   };
 
   //   Email sign in
-  const emailLogin = (e) => {
-    e.preventDefault();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  const emailLogin = (event) => {
+    event.preventDefault();
     signInWithEmailAndPassword(auth, userEmail, pass)
       .then((result) => {
         const user = result.user;
         setUser(user);
         console.log(user, userEmail, pass);
+        navigate(from, { replace: true });
       })
-      .catch((error) => console.log(error, userEmail, pass));
+      .catch((error) => {
+        setError(error);
+        console.log(error.message);
+      });
   };
 
   //   observe current logged in user
@@ -80,6 +87,7 @@ const useFirebase = () => {
     pass,
     confirmPass,
     user,
+    error,
     setUser,
     handleEmailRegister,
     grabEmail,

@@ -14,24 +14,24 @@ Here is the task that you need to do.
 
 3. Give your website a name. The name should appear on the website and be displayed on the website's title. -done
 4. Home page will have a header (simple navbar), banner, services section, and a footer. The banner could be static or a carousel. Either one will be alright. - done
-5. Add One extra section on the home page in addition to the 4 sections (header, banner, services, and footer) mentioned above.
+5. Add One extra section on the home page in addition to the 4 sections (header, banner, services, and footer) mentioned above. - done
 
 ---
 
 6. The Services section will have at least 3 services. You can put one, two, or more services in a row based on your design. Each service should have a relevant name, price, image, short description, and a specific button. -done
 
-7. Clicking on the button will take the user to the Checkout route. This route will be private/protected routes. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the checkout page
+7. Clicking on the button will take the user to the Checkout route. This route will be private/protected routes. Please make sure that the private route redirects to the login page if the user is not logged in. After login, the user will be redirected to the checkout page - done
 
-8. You can put anything on the checkout page. If you want to do some extra optional work, please read the optional but highly recommended section of this description.
+8. You can put anything on the checkout page. If you want to do some extra optional work, please read the optional but highly recommended section of this description. - done
 
-9. If you reload the protected/private route (after login), this page will not redirect the user to the login page. Instead, it will keep the logged-in user on the protected route.
+9. If you reload the protected/private route (after login), this page will not redirect the user to the login page. Instead, it will keep the logged-in user on the protected route. -done
 
 ---
 
-10. You Must implement Email-password based authentication. You will have to implement the Registration and the login page. Users should be able to toggle between Login and Registration view. You can use `react firebase hook` to implement the login system. And don't forget to make the Email and password field a required field.
-11. Also, implement at least one extra login, which could be (facebook, github, google, etc).
+10. You Must implement Email-password based authentication. You will have to implement the Registration and the login page. Users should be able to toggle between Login and Registration view. You can use `react firebase hook` to implement the login system. And don't forget to make the Email and password field a required field. -done
+11. Also, implement at least one extra login, which could be (facebook, github, google, etc). -done
 
-12. Once logged in, the log out/sign out button should appear on the header, which will log out the user once clicked.
+12. Once logged in, the log out/sign out button should appear on the header, which will log out the user once clicked. -done
 
 ---
 
@@ -41,14 +41,14 @@ Here is the task that you need to do.
 
     13.2 Why are you using `firebase`? What other options do you have to implement authentication?
 
-    13.3 What other services does `firebase` provide other than authentication
+    13.3 What other services does `firebase` provide other than authentication -done
 
-14. You will create an about me page. It could be the `about` route. There will put your name and your image (picture is optional. However, if you put a photo, please put a professional look picture). And write a small paragraph (3-5 lines) about your goal. And how you will work hard to achieve your goal.
+14. You will create an about me page. It could be the `about` route. There will put your name and your image (picture is optional. However, if you put a photo, please put a professional look picture). And write a small paragraph (3-5 lines) about your goal. And how you will work hard to achieve your goal. -done
 
 ---
 
-15. Create a 404 page (not found page)
-16. Minimum 9 meaningful git commit
+15. Create a 404 page (not found page) -done
+16. Minimum 9 meaningful git commit -done
 
 ## Bonus:
 
